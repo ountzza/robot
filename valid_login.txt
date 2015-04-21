@@ -3,9 +3,14 @@
 Library          Selenium2Library
 Documentation    This is a valid login
 
+*** Variables ***
+${SERVER}                  localhost:7272
+${BROWSER}                 Firefox
+${URL LOGIN}               http://${SERVER}/
+
 *** Test Cases ***
 Valid Case
-    Open Browser                http://localhost:7272/
+    Open Browser                ${URL LOGIN}                  ${BROWSER}
     Page Should Contain         Login Page
     Page Should Contain Button  LOGIN
     Input Text                  identifier= username_field    demo
