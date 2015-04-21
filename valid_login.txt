@@ -4,49 +4,37 @@ Library          Selenium2Library
 Documentation    This is a valid login
 
 *** Variables ***
-${SERVER}                  localhost:7272
-${BROWSER}                 Firefox
-${URL LOGIN}               http://${SERVER}/
-
+${SERVER}                       localhost:7272
+${BROWSER}                      Firefox
+${URL LOGIN}                    http://${SERVER}/
+${USERNAME FIELD}               username_field
+${PASSWORD FIELD}               password_field
+${ERROR PAGE}                   Error Page
+${LOGIN PAGE}                   Login Page
 *** Test Cases ***
 Valid Case
-    Open Browser                ${URL LOGIN}                  ${BROWSER}
-    Page Should Contain         Login Page
-    Page Should Contain Button  LOGIN
-    Input Text                  identifier= username_field    demo
-    Input Password              identifier= password_field    mode
-    Click Button                LOGIN
-    Page Should Contain         Login succeeded
-    Close Browser
+    Open Browser And Input Username & password    demo    demo    ${LOGIN PAGE}
+
 Invalid Case # 1: No Username No Password
-    Open Browser                http://localhost:7272/
-    Page Should Contain         Login Page
-    Page Should Contain Button  LOGIN
-    Click Button                LOGIN
-    Page Should Contain         Error Page
-    Close Browser
+    Open Browser And Input Username & password    ${EMPTY}    ${EMPTY}    ${ERROR PAGE}
+
 Invalid Case # 2: Wrong Username No Password
-    Open Browser                http://localhost:7272/
-    Page Should Contain         Login Page
-    Page Should Contain Button  LOGIN
-    Input Text                  identifier= username_field    pondd
-    Click Button                LOGIN
-    Page Should Contain         Error Page
-    Close Browser
+    Open Browser And Input Username & password    pondd    ${EMPTY}    ${ERROR PAGE}
+
 Invalid Case # 3: No Username Wrong Password
-    Open Browser                http://localhost:7272/
-    Page Should Contain         Login Page
-    Page Should Contain Button  LOGIN
-    Input Text                  identifier= password_field    mode
-    Click Button                LOGIN
-    Page Should Contain         Error Page
-    Close Browser
+    Open Browser And Input Username & password    ${EMPTY}    pondd    ${ERROR PAGE}
+
 Invalid Case # 4: Wrong Username Wrong Password
+    Open Browser And Input Username & password    pondd    pondd    ${ERROR PAGE}
+
+*** keyword ***
+Open Browser And Input Username & password
+    [Arguments]    ${username}    ${password}    ${pagecontain}
     Open Browser                http://localhost:7272/
     Page Should Contain         Login Page
     Page Should Contain Button  LOGIN
-    Input Text                  identifier= username_field    pondd
-    Input Text                  identifier= password_field    pondd
+    Input Text                  identifier= username_field    ${username}
+    Input Text                  identifier= password_field    ${password}
     Click Button                LOGIN
-    Page Should Contain         Error Page
+    Page Should Contain         ${pagecontain}
     Close Browser
