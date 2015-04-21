@@ -11,24 +11,21 @@ ${USERNAME FIELD}               username_field
 ${PASSWORD FIELD}               password_field
 ${ERROR PAGE}                   Error Page
 ${LOGIN PAGE}                   Login Page
+${WELCOME PAGE}                 Welcome Page
+
 *** Test Cases ***
 Valid Case
-    Open Browser And Input Username & password    demo    demo    ${LOGIN PAGE}
+    [Template]    Open Browser And Input Username & Password
+    demo        mode        ${WELCOME PAGE}
 
-Invalid Case # 1: No Username No Password
-    Open Browser And Input Username & password    ${EMPTY}    ${EMPTY}    ${ERROR PAGE}
-
-Invalid Case # 2: Wrong Username No Password
-    Open Browser And Input Username & password    pondd    ${EMPTY}    ${ERROR PAGE}
-
-Invalid Case # 3: No Username Wrong Password
-    Open Browser And Input Username & password    ${EMPTY}    pondd    ${ERROR PAGE}
-
-Invalid Case # 4: Wrong Username Wrong Password
-    Open Browser And Input Username & password    pondd    pondd    ${ERROR PAGE}
+Invalid Case
+    [Template]    Open Browser And Input Username & Password
+    pondd       ${EMPTY}    ${ERROR PAGE}
+    ${EMPTY}    pondd       ${ERROR PAGE}
+    pondd       pondd       ${ERROR PAGE}
 
 *** keyword ***
-Open Browser And Input Username & password
+Open Browser And Input Username & Password
     [Arguments]    ${username}    ${password}    ${pagecontain}
     Open Browser                http://localhost:7272/
     Page Should Contain         Login Page
