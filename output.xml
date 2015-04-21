@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20150421 11:15:55.278" generator="Robot 2.8.7 (Python 2.7.6 on darwin)">
+<suite source="/Users/Pondd/Workspace/robot/valid_login.txt" id="s1" name="Valid Login">
+<test id="s1-t1" name="Valid Case">
+<kw type="kw" name="Selenium2Library.Open Browser">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>http://localhost:7272/</arg>
+</arguments>
+<msg timestamp="20150421 11:15:55.373" level="INFO">Opening browser 'firefox' to base url 'http://localhost:7272/'</msg>
+<status status="PASS" endtime="20150421 11:15:58.779" starttime="20150421 11:15:55.372"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Page Should Contain">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Login Page</arg>
+</arguments>
+<msg timestamp="20150421 11:15:58.969" level="INFO">Current page contains text 'Login Page'.</msg>
+<status status="PASS" endtime="20150421 11:15:58.969" starttime="20150421 11:15:58.780"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Page Should Contain Button">
+<doc>Verifies button identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>LOGIN</arg>
+</arguments>
+<msg timestamp="20150421 11:15:59.082" level="INFO">Current page contains input 'LOGIN'.</msg>
+<status status="PASS" endtime="20150421 11:15:59.082" starttime="20150421 11:15:58.969"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>identifier= username_field</arg>
+<arg>demo</arg>
+</arguments>
+<msg timestamp="20150421 11:15:59.083" level="INFO">Typing text 'demo' into text field 'identifier= username_field'</msg>
+<status status="PASS" endtime="20150421 11:15:59.438" starttime="20150421 11:15:59.082"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Input Password">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>identifier= password_field</arg>
+<arg>mode</arg>
+</arguments>
+<msg timestamp="20150421 11:15:59.439" level="INFO">Typing password into text field 'identifier= password_field'</msg>
+<status status="PASS" endtime="20150421 11:15:59.720" starttime="20150421 11:15:59.439"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20150421 11:15:59.720" critical="yes" starttime="20150421 11:15:55.372"></status>
+</test>
+<doc>This is a valid login</doc>
+<metadata>
+</metadata>
+<status status="PASS" endtime="20150421 11:15:59.721" starttime="20150421 11:15:55.278"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" pass="1" id="s1" name="Valid Login">Valid Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

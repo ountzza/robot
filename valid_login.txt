@@ -1,0 +1,11 @@
+*** Settings ***
+Library          Selenium2Library
+Documentation    This is a valid login
+
+*** Test Cases ***
+Valid Case
+    Open Browser                http://localhost:7272/
+    Page Should Contain         Login Page
+    Page Should Contain Button  LOGIN
+    Input Text                  identifier= username_field    demo
+    Input Password              identifier= password_field    mode
