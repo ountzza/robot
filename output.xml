@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20150421 14:03:06.788" generator="Robot 2.8.7 (Python 2.7.6 on darwin)">
+<robot generated="20150421 14:13:40.982" generator="Robot 2.8.7 (Python 2.7.6 on darwin)">
 <suite source="/Users/Pondd/Workspace/robot/valid_login.txt" id="s1" name="Valid Login">
-<test id="s1-t1" name="Input cases">
+<kw type="setup" name="เปิดbrowser">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Open Browser">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>about:blank</arg>
+</arguments>
+<msg timestamp="20150421 14:13:41.072" level="INFO">Opening browser 'firefox' to base url 'about:blank'</msg>
+<status status="PASS" endtime="20150421 14:13:43.294" starttime="20150421 14:13:41.071"></status>
+</kw>
+<status status="PASS" endtime="20150421 14:13:43.296" starttime="20150421 14:13:41.071"></status>
+</kw>
+<test id="s1-t1" name="Valid Case">
 <kw type="kw" name="Open Browser And Input Username &amp; Password">
 <doc></doc>
 <arguments>
@@ -9,102 +23,35 @@
 <arg>mode</arg>
 <arg>${WELCOME PAGE}</arg>
 </arguments>
-<kw type="kw" name="Selenium2Library.Open Browser">
-<doc>Opens a new browser instance to given URL.</doc>
-<arguments>
-<arg>http://localhost:7272/</arg>
-</arguments>
-<msg timestamp="20150421 14:03:06.890" level="INFO">Opening browser 'firefox' to base url 'http://localhost:7272/'</msg>
-<status status="PASS" endtime="20150421 14:03:09.298" starttime="20150421 14:03:06.890"></status>
-</kw>
-<kw type="kw" name="Selenium2Library.Page Should Contain">
-<doc>Verifies that current page contains `text`.</doc>
-<arguments>
-<arg>Login Page</arg>
-</arguments>
-<msg timestamp="20150421 14:03:09.494" level="INFO">Current page contains text 'Login Page'.</msg>
-<status status="PASS" endtime="20150421 14:03:09.495" starttime="20150421 14:03:09.299"></status>
-</kw>
-<kw type="kw" name="Selenium2Library.Page Should Contain Button">
-<doc>Verifies button identified by `locator` is found from current page.</doc>
-<arguments>
-<arg>LOGIN</arg>
-</arguments>
-<msg timestamp="20150421 14:03:09.607" level="INFO">Current page contains input 'LOGIN'.</msg>
-<status status="PASS" endtime="20150421 14:03:09.607" starttime="20150421 14:03:09.496"></status>
-</kw>
-<kw type="kw" name="Selenium2Library.Input Text">
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<arguments>
-<arg>identifier= username_field</arg>
-<arg>${username}</arg>
-</arguments>
-<msg timestamp="20150421 14:03:09.608" level="INFO">Typing text 'demo' into text field 'identifier= username_field'</msg>
-<status status="PASS" endtime="20150421 14:03:09.963" starttime="20150421 14:03:09.608"></status>
-</kw>
-<kw type="kw" name="Selenium2Library.Input Text">
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<arguments>
-<arg>identifier= password_field</arg>
-<arg>${password}</arg>
-</arguments>
-<msg timestamp="20150421 14:03:09.963" level="INFO">Typing text 'mode' into text field 'identifier= password_field'</msg>
-<status status="PASS" endtime="20150421 14:03:10.281" starttime="20150421 14:03:09.963"></status>
-</kw>
-<kw type="kw" name="Selenium2Library.Click Button">
-<doc>Clicks a button identified by `locator`.</doc>
-<arguments>
-<arg>LOGIN</arg>
-</arguments>
-<msg timestamp="20150421 14:03:10.283" level="INFO">Clicking button 'LOGIN'.</msg>
-<status status="PASS" endtime="20150421 14:03:10.569" starttime="20150421 14:03:10.282"></status>
-</kw>
-<kw type="kw" name="Selenium2Library.Page Should Contain">
-<doc>Verifies that current page contains `text`.</doc>
-<arguments>
-<arg>${pagecontain}</arg>
-</arguments>
-<msg timestamp="20150421 14:03:10.677" level="INFO">Current page contains text 'Welcome Page'.</msg>
-<status status="PASS" endtime="20150421 14:03:10.677" starttime="20150421 14:03:10.569"></status>
-</kw>
-<kw type="kw" name="Selenium2Library.Close Browser">
-<doc>Closes the current browser.</doc>
-<arguments>
-</arguments>
-<status status="PASS" endtime="20150421 14:03:10.756" starttime="20150421 14:03:10.677"></status>
-</kw>
-<status status="PASS" endtime="20150421 14:03:10.756" starttime="20150421 14:03:06.889"></status>
-</kw>
-<kw type="kw" name="Open Browser And Input Username &amp; Password">
+<kw type="kw" name="ไปหน้้าล็อคอิน">
 <doc></doc>
 <arguments>
-<arg>pondd</arg>
-<arg>${EMPTY}</arg>
-<arg>${ERROR PAGE}</arg>
 </arguments>
-<kw type="kw" name="Selenium2Library.Open Browser">
-<doc>Opens a new browser instance to given URL.</doc>
+<kw type="kw" name="Selenium2Library.Go To">
+<doc>Navigates the active browser instance to the provided URL.</doc>
 <arguments>
 <arg>http://localhost:7272/</arg>
 </arguments>
-<msg timestamp="20150421 14:03:10.757" level="INFO">Opening browser 'firefox' to base url 'http://localhost:7272/'</msg>
-<status status="PASS" endtime="20150421 14:03:13.898" starttime="20150421 14:03:10.757"></status>
+<msg timestamp="20150421 14:13:43.301" level="INFO">Opening url 'http://localhost:7272/'</msg>
+<status status="PASS" endtime="20150421 14:13:43.467" starttime="20150421 14:13:43.300"></status>
+</kw>
+<status status="PASS" endtime="20150421 14:13:43.467" starttime="20150421 14:13:43.298"></status>
 </kw>
 <kw type="kw" name="Selenium2Library.Page Should Contain">
 <doc>Verifies that current page contains `text`.</doc>
 <arguments>
 <arg>Login Page</arg>
 </arguments>
-<msg timestamp="20150421 14:03:14.063" level="INFO">Current page contains text 'Login Page'.</msg>
-<status status="PASS" endtime="20150421 14:03:14.063" starttime="20150421 14:03:13.899"></status>
+<msg timestamp="20150421 14:13:43.624" level="INFO">Current page contains text 'Login Page'.</msg>
+<status status="PASS" endtime="20150421 14:13:43.624" starttime="20150421 14:13:43.467"></status>
 </kw>
 <kw type="kw" name="Selenium2Library.Page Should Contain Button">
 <doc>Verifies button identified by `locator` is found from current page.</doc>
 <arguments>
 <arg>LOGIN</arg>
 </arguments>
-<msg timestamp="20150421 14:03:14.152" level="INFO">Current page contains input 'LOGIN'.</msg>
-<status status="PASS" endtime="20150421 14:03:14.152" starttime="20150421 14:03:14.063"></status>
+<msg timestamp="20150421 14:13:43.743" level="INFO">Current page contains input 'LOGIN'.</msg>
+<status status="PASS" endtime="20150421 14:13:43.743" starttime="20150421 14:13:43.624"></status>
 </kw>
 <kw type="kw" name="Selenium2Library.Input Text">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -112,8 +59,8 @@
 <arg>identifier= username_field</arg>
 <arg>${username}</arg>
 </arguments>
-<msg timestamp="20150421 14:03:14.152" level="INFO">Typing text 'pondd' into text field 'identifier= username_field'</msg>
-<status status="PASS" endtime="20150421 14:03:14.475" starttime="20150421 14:03:14.152"></status>
+<msg timestamp="20150421 14:13:43.743" level="INFO">Typing text 'demo' into text field 'identifier= username_field'</msg>
+<status status="PASS" endtime="20150421 14:13:44.071" starttime="20150421 14:13:43.743"></status>
 </kw>
 <kw type="kw" name="Selenium2Library.Input Text">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -121,198 +68,283 @@
 <arg>identifier= password_field</arg>
 <arg>${password}</arg>
 </arguments>
-<msg timestamp="20150421 14:03:14.476" level="INFO">Typing text '' into text field 'identifier= password_field'</msg>
-<status status="PASS" endtime="20150421 14:03:14.765" starttime="20150421 14:03:14.475"></status>
+<msg timestamp="20150421 14:13:44.073" level="INFO">Typing text 'mode' into text field 'identifier= password_field'</msg>
+<status status="PASS" endtime="20150421 14:13:44.344" starttime="20150421 14:13:44.071"></status>
 </kw>
 <kw type="kw" name="Selenium2Library.Click Button">
 <doc>Clicks a button identified by `locator`.</doc>
 <arguments>
 <arg>LOGIN</arg>
 </arguments>
-<msg timestamp="20150421 14:03:14.765" level="INFO">Clicking button 'LOGIN'.</msg>
-<status status="PASS" endtime="20150421 14:03:15.021" starttime="20150421 14:03:14.765"></status>
+<msg timestamp="20150421 14:13:44.345" level="INFO">Clicking button 'LOGIN'.</msg>
+<status status="PASS" endtime="20150421 14:13:44.573" starttime="20150421 14:13:44.344"></status>
 </kw>
 <kw type="kw" name="Selenium2Library.Page Should Contain">
 <doc>Verifies that current page contains `text`.</doc>
 <arguments>
 <arg>${pagecontain}</arg>
 </arguments>
-<msg timestamp="20150421 14:03:15.142" level="INFO">Current page contains text 'Error Page'.</msg>
-<status status="PASS" endtime="20150421 14:03:15.142" starttime="20150421 14:03:15.021"></status>
+<msg timestamp="20150421 14:13:44.705" level="INFO">Current page contains text 'Welcome Page'.</msg>
+<status status="PASS" endtime="20150421 14:13:44.705" starttime="20150421 14:13:44.573"></status>
 </kw>
-<kw type="kw" name="Selenium2Library.Close Browser">
-<doc>Closes the current browser.</doc>
-<arguments>
-</arguments>
-<status status="PASS" endtime="20150421 14:03:15.231" starttime="20150421 14:03:15.143"></status>
-</kw>
-<status status="PASS" endtime="20150421 14:03:15.231" starttime="20150421 14:03:10.756"></status>
-</kw>
-<kw type="kw" name="Open Browser And Input Username &amp; Password">
-<doc></doc>
-<arguments>
-<arg>${EMPTY}</arg>
-<arg>pondd</arg>
-<arg>${ERROR PAGE}</arg>
-</arguments>
-<kw type="kw" name="Selenium2Library.Open Browser">
-<doc>Opens a new browser instance to given URL.</doc>
-<arguments>
-<arg>http://localhost:7272/</arg>
-</arguments>
-<msg timestamp="20150421 14:03:15.233" level="INFO">Opening browser 'firefox' to base url 'http://localhost:7272/'</msg>
-<status status="PASS" endtime="20150421 14:03:17.624" starttime="20150421 14:03:15.233"></status>
-</kw>
-<kw type="kw" name="Selenium2Library.Page Should Contain">
-<doc>Verifies that current page contains `text`.</doc>
-<arguments>
-<arg>Login Page</arg>
-</arguments>
-<msg timestamp="20150421 14:03:17.813" level="INFO">Current page contains text 'Login Page'.</msg>
-<status status="PASS" endtime="20150421 14:03:17.813" starttime="20150421 14:03:17.624"></status>
-</kw>
-<kw type="kw" name="Selenium2Library.Page Should Contain Button">
-<doc>Verifies button identified by `locator` is found from current page.</doc>
-<arguments>
-<arg>LOGIN</arg>
-</arguments>
-<msg timestamp="20150421 14:03:17.930" level="INFO">Current page contains input 'LOGIN'.</msg>
-<status status="PASS" endtime="20150421 14:03:17.930" starttime="20150421 14:03:17.814"></status>
-</kw>
-<kw type="kw" name="Selenium2Library.Input Text">
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<arguments>
-<arg>identifier= username_field</arg>
-<arg>${username}</arg>
-</arguments>
-<msg timestamp="20150421 14:03:17.931" level="INFO">Typing text '' into text field 'identifier= username_field'</msg>
-<status status="PASS" endtime="20150421 14:03:18.388" starttime="20150421 14:03:17.931"></status>
-</kw>
-<kw type="kw" name="Selenium2Library.Input Text">
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<arguments>
-<arg>identifier= password_field</arg>
-<arg>${password}</arg>
-</arguments>
-<msg timestamp="20150421 14:03:18.388" level="INFO">Typing text 'pondd' into text field 'identifier= password_field'</msg>
-<status status="PASS" endtime="20150421 14:03:18.598" starttime="20150421 14:03:18.388"></status>
-</kw>
-<kw type="kw" name="Selenium2Library.Click Button">
-<doc>Clicks a button identified by `locator`.</doc>
-<arguments>
-<arg>LOGIN</arg>
-</arguments>
-<msg timestamp="20150421 14:03:18.599" level="INFO">Clicking button 'LOGIN'.</msg>
-<status status="PASS" endtime="20150421 14:03:18.842" starttime="20150421 14:03:18.598"></status>
-</kw>
-<kw type="kw" name="Selenium2Library.Page Should Contain">
-<doc>Verifies that current page contains `text`.</doc>
-<arguments>
-<arg>${pagecontain}</arg>
-</arguments>
-<msg timestamp="20150421 14:03:18.959" level="INFO">Current page contains text 'Error Page'.</msg>
-<status status="PASS" endtime="20150421 14:03:18.960" starttime="20150421 14:03:18.842"></status>
-</kw>
-<kw type="kw" name="Selenium2Library.Close Browser">
-<doc>Closes the current browser.</doc>
-<arguments>
-</arguments>
-<status status="PASS" endtime="20150421 14:03:19.045" starttime="20150421 14:03:18.960"></status>
-</kw>
-<status status="PASS" endtime="20150421 14:03:19.046" starttime="20150421 14:03:15.232"></status>
-</kw>
-<kw type="kw" name="Open Browser And Input Username &amp; Password">
-<doc></doc>
-<arguments>
-<arg>pondd</arg>
-<arg>pondd</arg>
-<arg>${ERROR PAGE}</arg>
-</arguments>
-<kw type="kw" name="Selenium2Library.Open Browser">
-<doc>Opens a new browser instance to given URL.</doc>
-<arguments>
-<arg>http://localhost:7272/</arg>
-</arguments>
-<msg timestamp="20150421 14:03:19.047" level="INFO">Opening browser 'firefox' to base url 'http://localhost:7272/'</msg>
-<status status="PASS" endtime="20150421 14:03:22.158" starttime="20150421 14:03:19.047"></status>
-</kw>
-<kw type="kw" name="Selenium2Library.Page Should Contain">
-<doc>Verifies that current page contains `text`.</doc>
-<arguments>
-<arg>Login Page</arg>
-</arguments>
-<msg timestamp="20150421 14:03:22.329" level="INFO">Current page contains text 'Login Page'.</msg>
-<status status="PASS" endtime="20150421 14:03:22.330" starttime="20150421 14:03:22.158"></status>
-</kw>
-<kw type="kw" name="Selenium2Library.Page Should Contain Button">
-<doc>Verifies button identified by `locator` is found from current page.</doc>
-<arguments>
-<arg>LOGIN</arg>
-</arguments>
-<msg timestamp="20150421 14:03:22.427" level="INFO">Current page contains input 'LOGIN'.</msg>
-<status status="PASS" endtime="20150421 14:03:22.427" starttime="20150421 14:03:22.330"></status>
-</kw>
-<kw type="kw" name="Selenium2Library.Input Text">
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<arguments>
-<arg>identifier= username_field</arg>
-<arg>${username}</arg>
-</arguments>
-<msg timestamp="20150421 14:03:22.428" level="INFO">Typing text 'pondd' into text field 'identifier= username_field'</msg>
-<status status="PASS" endtime="20150421 14:03:22.660" starttime="20150421 14:03:22.427"></status>
-</kw>
-<kw type="kw" name="Selenium2Library.Input Text">
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<arguments>
-<arg>identifier= password_field</arg>
-<arg>${password}</arg>
-</arguments>
-<msg timestamp="20150421 14:03:22.660" level="INFO">Typing text 'pondd' into text field 'identifier= password_field'</msg>
-<status status="PASS" endtime="20150421 14:03:22.944" starttime="20150421 14:03:22.660"></status>
-</kw>
-<kw type="kw" name="Selenium2Library.Click Button">
-<doc>Clicks a button identified by `locator`.</doc>
-<arguments>
-<arg>LOGIN</arg>
-</arguments>
-<msg timestamp="20150421 14:03:22.945" level="INFO">Clicking button 'LOGIN'.</msg>
-<status status="PASS" endtime="20150421 14:03:23.208" starttime="20150421 14:03:22.944"></status>
-</kw>
-<kw type="kw" name="Selenium2Library.Page Should Contain">
-<doc>Verifies that current page contains `text`.</doc>
-<arguments>
-<arg>${pagecontain}</arg>
-</arguments>
-<msg timestamp="20150421 14:03:23.321" level="INFO">Current page contains text 'Error Page'.</msg>
-<status status="PASS" endtime="20150421 14:03:23.321" starttime="20150421 14:03:23.210"></status>
-</kw>
-<kw type="kw" name="Selenium2Library.Close Browser">
-<doc>Closes the current browser.</doc>
-<arguments>
-</arguments>
-<status status="PASS" endtime="20150421 14:03:23.407" starttime="20150421 14:03:23.321"></status>
-</kw>
-<status status="PASS" endtime="20150421 14:03:23.407" starttime="20150421 14:03:19.046"></status>
+<status status="PASS" endtime="20150421 14:13:44.705" starttime="20150421 14:13:43.297"></status>
 </kw>
 <doc></doc>
 <tags>
 </tags>
-<status status="PASS" endtime="20150421 14:03:23.407" critical="yes" starttime="20150421 14:03:06.888"></status>
+<status status="PASS" endtime="20150421 14:13:44.706" critical="yes" starttime="20150421 14:13:43.296"></status>
 </test>
+<test id="s1-t2" name="Invalid Case">
+<kw type="kw" name="Open Browser And Input Username &amp; Password">
+<doc></doc>
+<arguments>
+<arg>pondd</arg>
+<arg>${EMPTY}</arg>
+<arg>${ERROR PAGE}</arg>
+</arguments>
+<kw type="kw" name="ไปหน้้าล็อคอิน">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Go To">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>http://localhost:7272/</arg>
+</arguments>
+<msg timestamp="20150421 14:13:44.708" level="INFO">Opening url 'http://localhost:7272/'</msg>
+<status status="PASS" endtime="20150421 14:13:44.784" starttime="20150421 14:13:44.708"></status>
+</kw>
+<status status="PASS" endtime="20150421 14:13:44.784" starttime="20150421 14:13:44.707"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Page Should Contain">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Login Page</arg>
+</arguments>
+<msg timestamp="20150421 14:13:44.901" level="INFO">Current page contains text 'Login Page'.</msg>
+<status status="PASS" endtime="20150421 14:13:44.901" starttime="20150421 14:13:44.784"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Page Should Contain Button">
+<doc>Verifies button identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>LOGIN</arg>
+</arguments>
+<msg timestamp="20150421 14:13:44.993" level="INFO">Current page contains input 'LOGIN'.</msg>
+<status status="PASS" endtime="20150421 14:13:44.993" starttime="20150421 14:13:44.901"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>identifier= username_field</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20150421 14:13:44.994" level="INFO">Typing text 'pondd' into text field 'identifier= username_field'</msg>
+<status status="PASS" endtime="20150421 14:13:45.229" starttime="20150421 14:13:44.994"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>identifier= password_field</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20150421 14:13:45.230" level="INFO">Typing text '' into text field 'identifier= password_field'</msg>
+<status status="PASS" endtime="20150421 14:13:45.531" starttime="20150421 14:13:45.230"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>LOGIN</arg>
+</arguments>
+<msg timestamp="20150421 14:13:45.532" level="INFO">Clicking button 'LOGIN'.</msg>
+<status status="PASS" endtime="20150421 14:13:45.922" starttime="20150421 14:13:45.532"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Page Should Contain">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>${pagecontain}</arg>
+</arguments>
+<msg timestamp="20150421 14:13:46.043" level="INFO">Current page contains text 'Error Page'.</msg>
+<status status="PASS" endtime="20150421 14:13:46.043" starttime="20150421 14:13:45.923"></status>
+</kw>
+<status status="PASS" endtime="20150421 14:13:46.044" starttime="20150421 14:13:44.707"></status>
+</kw>
+<kw type="kw" name="Open Browser And Input Username &amp; Password">
+<doc></doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>pondd</arg>
+<arg>${ERROR PAGE}</arg>
+</arguments>
+<kw type="kw" name="ไปหน้้าล็อคอิน">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Go To">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>http://localhost:7272/</arg>
+</arguments>
+<msg timestamp="20150421 14:13:46.045" level="INFO">Opening url 'http://localhost:7272/'</msg>
+<status status="PASS" endtime="20150421 14:13:46.119" starttime="20150421 14:13:46.045"></status>
+</kw>
+<status status="PASS" endtime="20150421 14:13:46.120" starttime="20150421 14:13:46.045"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Page Should Contain">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Login Page</arg>
+</arguments>
+<msg timestamp="20150421 14:13:46.228" level="INFO">Current page contains text 'Login Page'.</msg>
+<status status="PASS" endtime="20150421 14:13:46.229" starttime="20150421 14:13:46.121"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Page Should Contain Button">
+<doc>Verifies button identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>LOGIN</arg>
+</arguments>
+<msg timestamp="20150421 14:13:46.332" level="INFO">Current page contains input 'LOGIN'.</msg>
+<status status="PASS" endtime="20150421 14:13:46.333" starttime="20150421 14:13:46.229"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>identifier= username_field</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20150421 14:13:46.334" level="INFO">Typing text '' into text field 'identifier= username_field'</msg>
+<status status="PASS" endtime="20150421 14:13:46.640" starttime="20150421 14:13:46.333"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>identifier= password_field</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20150421 14:13:46.641" level="INFO">Typing text 'pondd' into text field 'identifier= password_field'</msg>
+<status status="PASS" endtime="20150421 14:13:46.986" starttime="20150421 14:13:46.640"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>LOGIN</arg>
+</arguments>
+<msg timestamp="20150421 14:13:46.987" level="INFO">Clicking button 'LOGIN'.</msg>
+<status status="PASS" endtime="20150421 14:13:47.247" starttime="20150421 14:13:46.986"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Page Should Contain">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>${pagecontain}</arg>
+</arguments>
+<msg timestamp="20150421 14:13:47.344" level="INFO">Current page contains text 'Error Page'.</msg>
+<status status="PASS" endtime="20150421 14:13:47.344" starttime="20150421 14:13:47.247"></status>
+</kw>
+<status status="PASS" endtime="20150421 14:13:47.344" starttime="20150421 14:13:46.044"></status>
+</kw>
+<kw type="kw" name="Open Browser And Input Username &amp; Password">
+<doc></doc>
+<arguments>
+<arg>pondd</arg>
+<arg>pondd</arg>
+<arg>${ERROR PAGE}</arg>
+</arguments>
+<kw type="kw" name="ไปหน้้าล็อคอิน">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Go To">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>http://localhost:7272/</arg>
+</arguments>
+<msg timestamp="20150421 14:13:47.346" level="INFO">Opening url 'http://localhost:7272/'</msg>
+<status status="PASS" endtime="20150421 14:13:47.411" starttime="20150421 14:13:47.346"></status>
+</kw>
+<status status="PASS" endtime="20150421 14:13:47.411" starttime="20150421 14:13:47.345"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Page Should Contain">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Login Page</arg>
+</arguments>
+<msg timestamp="20150421 14:13:47.519" level="INFO">Current page contains text 'Login Page'.</msg>
+<status status="PASS" endtime="20150421 14:13:47.519" starttime="20150421 14:13:47.411"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Page Should Contain Button">
+<doc>Verifies button identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>LOGIN</arg>
+</arguments>
+<msg timestamp="20150421 14:13:47.608" level="INFO">Current page contains input 'LOGIN'.</msg>
+<status status="PASS" endtime="20150421 14:13:47.608" starttime="20150421 14:13:47.520"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>identifier= username_field</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20150421 14:13:47.609" level="INFO">Typing text 'pondd' into text field 'identifier= username_field'</msg>
+<status status="PASS" endtime="20150421 14:13:47.822" starttime="20150421 14:13:47.609"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>identifier= password_field</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20150421 14:13:47.823" level="INFO">Typing text 'pondd' into text field 'identifier= password_field'</msg>
+<status status="PASS" endtime="20150421 14:13:48.062" starttime="20150421 14:13:47.822"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>LOGIN</arg>
+</arguments>
+<msg timestamp="20150421 14:13:48.063" level="INFO">Clicking button 'LOGIN'.</msg>
+<status status="PASS" endtime="20150421 14:13:48.277" starttime="20150421 14:13:48.062"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Page Should Contain">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>${pagecontain}</arg>
+</arguments>
+<msg timestamp="20150421 14:13:48.370" level="INFO">Current page contains text 'Error Page'.</msg>
+<status status="PASS" endtime="20150421 14:13:48.371" starttime="20150421 14:13:48.277"></status>
+</kw>
+<status status="PASS" endtime="20150421 14:13:48.371" starttime="20150421 14:13:47.345"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20150421 14:13:48.371" critical="yes" starttime="20150421 14:13:44.706"></status>
+</test>
+<kw type="teardown" name="ปิดหน้าล็อคอิน">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Close Browser">
+<doc>Closes the current browser.</doc>
+<arguments>
+</arguments>
+<status status="PASS" endtime="20150421 14:13:48.444" starttime="20150421 14:13:48.372"></status>
+</kw>
+<status status="PASS" endtime="20150421 14:13:48.444" starttime="20150421 14:13:48.372"></status>
+</kw>
 <doc>This is a valid login</doc>
 <metadata>
 </metadata>
-<status status="PASS" endtime="20150421 14:03:23.408" starttime="20150421 14:03:06.789"></status>
+<status status="PASS" endtime="20150421 14:13:48.444" starttime="20150421 14:13:40.983"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="1">Critical Tests</stat>
-<stat fail="0" pass="1">All Tests</stat>
+<stat fail="0" pass="2">Critical Tests</stat>
+<stat fail="0" pass="2">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="0" pass="1" id="s1" name="Valid Login">Valid Login</stat>
+<stat fail="0" pass="2" id="s1" name="Valid Login">Valid Login</stat>
 </suite>
 </statistics>
 <errors>

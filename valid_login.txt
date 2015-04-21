@@ -1,7 +1,9 @@
 ### http://rtomac.github.io/robotframework-selenium2library/doc/Selenium2Library.html
 *** Settings ***
-Library          Selenium2Library
-Documentation    This is a valid login
+Library             Selenium2Library
+Documentation       This is a valid login
+Suite Setup         เปิดbrowser
+Suite Teardown      ปิดหน้าล็อคอิน
 
 *** Variables ***
 ${SERVER}                       localhost:7272
@@ -27,11 +29,17 @@ Invalid Case
 *** keyword ***
 Open Browser And Input Username & Password
     [Arguments]    ${username}    ${password}    ${pagecontain}
-    Open Browser                http://localhost:7272/
+    ไปหน้้าล็อคอิน
     Page Should Contain         Login Page
     Page Should Contain Button  LOGIN
     Input Text                  identifier= username_field    ${username}
     Input Text                  identifier= password_field    ${password}
     Click Button                LOGIN
     Page Should Contain         ${pagecontain}
+
+เปิดbrowser
+    Open Browser    about:blank
+ไปหน้้าล็อคอิน
+    Go To           http://localhost:7272/
+ปิดหน้าล็อคอิน
     Close Browser
