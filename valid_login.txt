@@ -1,3 +1,4 @@
+### http://rtomac.github.io/robotframework-selenium2library/doc/Selenium2Library.html
 *** Settings ***
 Library          Selenium2Library
 Documentation    This is a valid login
@@ -9,3 +10,38 @@ Valid Case
     Page Should Contain Button  LOGIN
     Input Text                  identifier= username_field    demo
     Input Password              identifier= password_field    mode
+    Click Button                LOGIN
+    Page Should Contain         Login succeeded
+    Close Browser
+Invalid Case # 1: No Username No Password
+    Open Browser                http://localhost:7272/
+    Page Should Contain         Login Page
+    Page Should Contain Button  LOGIN
+    Click Button                LOGIN
+    Page Should Contain         Error Page
+    Close Browser
+Invalid Case # 2: Wrong Username No Password
+    Open Browser                http://localhost:7272/
+    Page Should Contain         Login Page
+    Page Should Contain Button  LOGIN
+    Input Text                  identifier= username_field    pondd
+    Click Button                LOGIN
+    Page Should Contain         Error Page
+    Close Browser
+Invalid Case # 3: No Username Wrong Password
+    Open Browser                http://localhost:7272/
+    Page Should Contain         Login Page
+    Page Should Contain Button  LOGIN
+    Input Text                  identifier= password_field    mode
+    Click Button                LOGIN
+    Page Should Contain         Error Page
+    Close Browser
+Invalid Case # 4: Wrong Username Wrong Password
+    Open Browser                http://localhost:7272/
+    Page Should Contain         Login Page
+    Page Should Contain Button  LOGIN
+    Input Text                  identifier= username_field    pondd
+    Input Text                  identifier= password_field    pondd
+    Click Button                LOGIN
+    Page Should Contain         Error Page
+    Close Browser
